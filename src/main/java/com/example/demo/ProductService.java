@@ -1,0 +1,18 @@
+package com.example.demo;
+
+import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
+
+@Component
+public class ProductService {
+    private ProductRepository productRepository;
+
+    @Autowired
+    ProductService(ProductRepository productRepository){
+        this.productRepository = productRepository;
+    }
+
+    public String getProduct(){
+        return productRepository.getProduct();
+    }
+}
