@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.product;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +16,13 @@ public class ProductController {
        System.out.println("진짜 스프링이 알아서 객체 생성을 하나?");
    }
 
-   @RequestMapping(value="", method= RequestMethod.GET)
+   @RequestMapping(value="/product", method= RequestMethod.GET)
     public String getProduct(){
       return productService.getProduct();
+   }
+
+   @RequestMapping(value="/product", method = RequestMethod.POST)
+   public void saveProduct(){
+       productService.saveProduct();
    }
 }
